@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Forostina-CRM
+  profiles:
+    active: local
+
+server:
+  port: 8080
+
+# Logging
+logging:
+  file:
+    path: ./logs/${spring.application.name}

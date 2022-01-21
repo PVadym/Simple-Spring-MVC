@@ -1,0 +1,26 @@
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Forostina-CRM
+  datasource:
+      url: jdbc:postgresql://localhost:5432/forostina_db
+      password: pylypchenko
+      username: pylypchenko
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.jdbc.batch_size: 20
+      hibernate.format_sql: true
+      hibernate.generate_statistics: true
+      hibernate.use_sql_comments: true
+    show-sql: true
+    open-in-view: false
+    generate-ddl: true
+logging:
+  level:
+    root: info
