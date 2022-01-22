@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+
+</head>
+<body>
+<div id="wrapper" th:fragment="sidebar">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a class="navbar-brand">
+                        <img src="logo.png" width="120" height="40" alt="logo">
+                    </a>
+                </li>
+                <li sec:authorize="hasAuthority('SVODKA')">
+                    <a href="#">
+                        <img src="test_icon.png" width="20" height="20" alt="logo">
+                        Сводка
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="test_icon.png" width="20" height="20" alt="logo">
+                        Каталог изделий
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="test_icon.png" width="20" height="20" alt="logo">
+                        Склад
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="test_icon.png" width="20" height="20" alt="logo">
+                        Заказчики
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="test_icon.png" width="20" height="20" alt="logo">
+
+                        Сотрудники
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+</div>
+</body>
+</html>

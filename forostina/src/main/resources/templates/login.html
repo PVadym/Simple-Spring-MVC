@@ -7,8 +7,8 @@
 <h1>Login page</h1>
 <p th:if="${loginError}" class="error">Wrong user or password</p>
 <form th:action="@{/login}" method="post">
-    <label for="phone">Phone</label>:
-    <input type="text" id="phone" name="phone" pattern="^\+38(0\d{9})$" value="+38" /> <br />
+    <label for="username">Phone</label>:
+    <input type="text" id="username" name="username" pattern="^\+38(0\d{9})$" value="+38" /> <br />
     <label for="password">Password</label>:
     <input type="password" id="password" name="password"/> <br />
     <input type="submit" value="Log in" />

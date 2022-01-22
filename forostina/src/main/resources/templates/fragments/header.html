@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+
+</head>
+<body>
+<div class="container" th:fragment="header">
+<!-- Navbar -->
+    <nav class="navbar navbar-light bg-light navbar-expand-sm">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-list-4">
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button"  aria-haspopup="true" aria-expanded="false">
+                        <img src="bell.png" width="40" height="40" class="rounded-circle">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <div sec:authentication="name"></div>
+                    <div><p th:each="authority : ${#authentication.getAuthorities()}"
+                       th:if="${authority.getAuthority().startsWith('ROLE_')}"
+                       th:text="${authority.getAuthority().replaceFirst('ROLE_', '')}">
+                    </p></div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="user.png" width="40" height="40" class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/login?logout">
+                            <img src="logout.png" width="30" height="30" class="rounded-circle">
+                            Вийти
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+</body>
+</html>
