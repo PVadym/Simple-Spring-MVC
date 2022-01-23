@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <style th:replace="/fragments/style"></style>
+</head>
+<body>
+<div class="containerCenter">
+    <div class="columnFlex">
+
+
+        <table>
+            <thead>
+            <tr>
+                <th>Должности</th>
+                <th style="width: 40px">Edit</th>
+                <th style="width: 40px">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="position:${positions}" th:object="${position}">
+                <td th:text="*{name}"></td>
+
+                <td>
+                    <form method="post" th:action="@{/admin/editMovie(id=${position.getId()})}">
+                        <button class="btn btn-block btn-warning btn-flat">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <button th:onclick="'toggleModal(\'' + ${position.getId()} + '\')'"
+                            class="btn btn-block btn-danger btn-flat">Delete
+                    </button>
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+            <tr>
+                <th>Категории изделий</th>
+                <th style="width: 40px">Edit</th>
+                <th style="width: 40px">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="category:${productCategories}" th:object="${category}">
+                <td th:text="*{name}"></td>
+
+                <td>
+                    <form method="post" th:action="@{/admin/editMovie(id=*{id})}">
+                        <button class="btn btn-block btn-warning btn-flat">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <button th:onclick="'toggleModal(\'' + *{id} + '\')'"
+                            class="btn btn-block btn-danger btn-flat">Delete
+                    </button>
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+        <table>
+            <thead>
+            <tr>
+                <th>Категории сырья</th>
+                <th style="width: 40px">Edit</th>
+                <th style="width: 40px">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="category:${rawCategories}" th:object="${category}">
+                <td th:text="*{name}"></td>
+
+                <td>
+                    <form method="post" th:action="@{/admin/editMovie(id=*{id})}">
+                        <button class="btn btn-block btn-warning btn-flat">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <button th:onclick="'toggleModal(\'' + *{id} + '\')'"
+                            class="btn btn-block btn-danger btn-flat">Delete
+                    </button>
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

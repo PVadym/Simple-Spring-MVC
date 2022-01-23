@@ -1,0 +1,11 @@
+
+.containerCenter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.columnFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
