@@ -1,0 +1,58 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link th:href="@{/css/test-style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/test-style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Forostina</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div th:replace="fragments/sidebar :: sidebar"></div>
+<div class="container">
+    <form action="#" th:action="@{/addCreditCard}" th:object="${creditCardForm}" method="post">
+        <table>
+            <tr>
+                <td>Number:</td>
+                <td><input type="text" th:field="*{number}" /></td>
+                <td th:if="${#fields.hasErrors('number')}" th:errors="*{number}">Name Error</td>
+            </tr>
+            <tr>
+                <td>Holder:</td>
+                <td><input type="text" th:field="*{holder}" /></td>
+                <td th:if="${#fields.hasErrors('holder')}" th:errors="*{holder}">Holder Error</td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td>
+                    <select class="form-control" th:field="*{active}">
+                        <option th:value="1" >ACTIVE</option>
+                        <option th:value="0" >NOT ACTIVE</option>
+                     </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <input onclick='javascript:window.history.back()' value='Back' type='button' />
+    </div>
+</div>
+
+
+</div>
+
+<div th:replace="fragments/footer :: footer">
+    &copy; 2016 The Static Templates
+</div>
+</body>
+</html>
