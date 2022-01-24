@@ -7,5 +7,5 @@ import java.util.Set;
 
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
 
-    Set<ProductCategory> findAllByOrderByName();
+    Set<ProductCategory> findAllByActiveTrueOrderByName();
 }

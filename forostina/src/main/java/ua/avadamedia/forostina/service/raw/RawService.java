@@ -7,4 +7,6 @@ import java.util.Set;
 public interface RawService {
 
     Set<RawCategory> getAllRawCategories();
+
+    void deactivateRawCategory(Long id);
 }

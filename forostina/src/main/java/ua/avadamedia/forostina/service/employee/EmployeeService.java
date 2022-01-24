@@ -7,4 +7,6 @@ import java.util.Set;
 public interface EmployeeService {
 
     Set<Position> getAllPositions();
+
+    void deactivatePosition(Long positionId);
 }

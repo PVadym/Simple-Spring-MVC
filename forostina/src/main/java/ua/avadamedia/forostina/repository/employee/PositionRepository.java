@@ -7,6 +7,5 @@ import java.util.Set;
 
 public interface PositionRepository extends JpaRepository<Position, Long> {
 
-    Set<Position> findAllByOrderByName();
-
+    Set<Position> findAllByActiveTrueOrderByName();
 }

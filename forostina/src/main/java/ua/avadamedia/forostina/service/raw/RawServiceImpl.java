@@ -14,6 +14,14 @@ public class RawServiceImpl implements RawService{
 
     @Override
     public Set<RawCategory> getAllRawCategories() {
-        return rawCategoryRepository.findAllByOrderByName();
+        return rawCategoryRepository.findAllByActiveTrueOrderByName();
+    }
+
+    @Override
+    public void deactivateRawCategory(Long id) {
+        rawCategoryRepository.findById(id).ifPresent(rawCategory -> {
+            rawCategory.setActive(false);
+            rawCategoryRepository.save(rawCategory);
+        });
     }
 }

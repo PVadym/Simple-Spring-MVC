@@ -7,5 +7,5 @@ import java.util.Set;
 
 public interface RawCategoryRepository extends JpaRepository<RawCategory, Long> {
 
-    Set<RawCategory> findAllByOrderByName();
+    Set<RawCategory> findAllByActiveTrueOrderByName();
 }

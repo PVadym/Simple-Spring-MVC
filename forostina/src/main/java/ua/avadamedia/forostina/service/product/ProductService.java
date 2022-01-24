@@ -7,4 +7,6 @@ import java.util.Set;
 public interface ProductService {
 
     Set<ProductCategory> getAllProductCategories();
+
+    void deactivateProductCategory(Long id);
 }

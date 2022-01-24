@@ -14,4 +14,8 @@ public class ProductCategory {
 
     @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false,
+            columnDefinition = "boolean default true")
+    private boolean active = true;
 }

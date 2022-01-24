@@ -28,9 +28,9 @@
                     </form>
                 </td>
                 <td>
-                    <button th:onclick="'toggleModal(\'' + ${position.getId()} + '\')'"
-                            class="btn btn-block btn-danger btn-flat">Delete
-                    </button>
+                    <form method="post" th:action="@{/settings/delete/position/{id}(id = *{id})}">
+                        <button class="btn btn-block btn-warning btn-flat">Delete</button>
+                    </form>
                 </td>
 
             </tr>
@@ -55,9 +55,9 @@
                     </form>
                 </td>
                 <td>
-                    <button th:onclick="'toggleModal(\'' + *{id} + '\')'"
-                            class="btn btn-block btn-danger btn-flat">Delete
-                    </button>
+                    <form method="post" th:action="@{/settings/delete/product-category/{id}(id = *{id})}">
+                        <button class="btn btn-block btn-warning btn-flat">Delete</button>
+                    </form>
                 </td>
 
             </tr>
@@ -82,9 +82,9 @@
                     </form>
                 </td>
                 <td>
-                    <button th:onclick="'toggleModal(\'' + *{id} + '\')'"
-                            class="btn btn-block btn-danger btn-flat">Delete
-                    </button>
+                    <form method="post" th:action="@{/settings/delete/raw-category/{id}(id = *{id})}">
+                        <button class="btn btn-block btn-warning btn-flat">Delete</button>
+                    </form>
                 </td>
 
             </tr>
