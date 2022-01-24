@@ -4,8 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link th:href="@{/css/test-style.css}" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/test-style.css">
+    <style th:replace="/fragments/style"></style>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,7 +14,7 @@
 <body>
 <div th:replace="fragments/header :: header"></div>
 <div th:replace="fragments/sidebar :: sidebar"></div>
-<div class="container">
+<div class="containerCenter">
     <form action="#" th:action="@{/addCreditCard}" th:object="${creditCardForm}" method="post">
         <table>
             <tr>
